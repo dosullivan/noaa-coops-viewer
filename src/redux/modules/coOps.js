@@ -160,7 +160,7 @@ export default createReducer(
   {
     isFetching: false,
     years: [Moment().year(), Moment().subtract(1, 'y').year()],
-    sampleFunctions: [AVG],
+    sampleFunction: AVG,
     selectedStationID: '9414290',
     data: [],
     errors: [],
@@ -206,14 +206,7 @@ export default createReducer(
       return Object.assign({}, state, { years: years })
     },
     [TOGGLE_SAMPLE_FUNCTION_SELECTION]: (state, sampleFunction) => {
-      var sampleFunctions
-      if (state.sampleFunctions.indexOf(sampleFunction) === -1) {
-        sampleFunctions = state.sampleFunctions.concat(sampleFunction)
-      }
-      else {
-        sampleFunctions = state.sampleFunctions.filter(keep => keep !== sampleFunction)
-      }
-      return Object.assign({}, state, { sampleFunctions: sampleFunctions })
+      return Object.assign({}, state, { sampleFunction: sampleFunction })
     },
     [SELECT_STATION_ID]: (state, stationID) => {
       return Object.assign({}, state, { selectedStationID: stationID, data: [] })

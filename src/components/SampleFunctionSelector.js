@@ -5,7 +5,7 @@ import './SampleFunctionSelector.scss'
 export default class SampleFunctionSelector extends React.Component {
   static propTypes = {
     sampleFunctions: React.PropTypes.array.isRequired,
-    selection: React.PropTypes.array.isRequired,
+    selection: React.PropTypes.string.isRequired,
     toggleSampleFunction: React.PropTypes.func
   };
 
@@ -30,7 +30,7 @@ export default class SampleFunctionSelector extends React.Component {
   }
 
   isChecked(sampleFunction) {
-    return this.props.selection.indexOf(sampleFunction) !== -1
+    return this.props.selection === sampleFunction
   }
 
   sampleFunctionSelect(sampleFunction) {
