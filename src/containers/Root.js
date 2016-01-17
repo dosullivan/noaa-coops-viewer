@@ -17,9 +17,9 @@ export default class Root extends React.Component {
     )
 
     return (
-        <Provider store={this.props.store}>
-          {content}
-        </Provider>
+      <Provider store={this.props.store}>
+        {content}
+      </Provider>
     )
   }
 }
